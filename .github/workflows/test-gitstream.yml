@@ -24,7 +24,7 @@ jobs:
           ${HOME}/go/bin/gitstream \
             --upstream-url git@github.com:qbarrand/test-upstream \
             --downstream-since 2022-01-01 \
-            --downstream-repo-path ../test-downstream
+            --downstream-repo-path ../test-downstream \
             --downstream-repo-name qbarrand/test-downstream
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
