@@ -20,6 +20,11 @@ jobs:
         run: go install github.com/qbarrand/gitstream@latest
 
       - name: Run GitStream
-        run: ${HOME}/go/bin/gitstream --upstream-url https://github.com/qbarrand/test-upstream --downstream-since 2022-01-01 -downstream-repo-path ../test-downstream
+        run: |
+          ${HOME}/go/bin/gitstream \
+            --upstream-url git@github.com:qbarrand/test-upstream \
+            --downstream-since 2022-01-01 \
+            --downstream-repo-path ../test-downstream
+            --downstream-repo-name qbarrand/test-downstream
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
